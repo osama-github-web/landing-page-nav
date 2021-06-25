@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--    Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--    Swiper.css-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!--    Animate Css-->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fa fa-headphones"></i>boat
+            </div>
+            <div class="menu">
+                <i class="fa fa-bars" id="menubar"></i>
+            </div>
+        </nav>
+        <img src="img/headphone.png" class="animate__animated animate__zoomIn" alt="headphone" id="headphone">
+        <h1 class="watermark animate__animated animate__fadeIn animate__delay-1s">Headphones</h1>
+        <div class="slider animate__animated animate__fadeIn animate__delay-1s">
+            <!-- Swiper -->
+            <div class="swiper-container mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="img/headphone.png" />
+                </div> 
+                <div class="swiper-slide">
+                  <img src="img/headphone1.png" />
+                </div>               
+                  <div class="swiper-slide">
+                  <img src="img/headphone2.png" />
+                </div> 
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </header>
+    <section id="sidenav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Product</a>
+        <a href="#">Services</a>
+        <a href="#">portfolio</a>
+    </section>
+</body>
+</html>
+
+<!--Swiper.js-->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+ <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+          loop:true,autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+</script>
+<script>
+    var sidenav = document.getElementById("sidenav");
+    var menubar = document.getElementById("menubar");
+    sidenav.style.width="0px";
+    menubar.onclick = function(){
+        if(sidenav.style.width == "0px"){
+            sidenav.style.width = "350px";
+        }else{
+            sidenav.style.width = "0px";
+        }
+    }
+    
+</script>
